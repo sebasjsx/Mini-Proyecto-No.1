@@ -6,6 +6,7 @@ import {
   SocialAuthServiceConfig
 } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
+import { SecurityRoutingModule } from './security-routing.module';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -29,7 +30,7 @@ import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
       } as SocialAuthServiceConfig
     }
   ],
-  imports: [CommonModule, SocialLoginModule],
+  imports: [CommonModule, SocialLoginModule, SecurityRoutingModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SecurityModule {}

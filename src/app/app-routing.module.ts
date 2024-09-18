@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './security/login/login.component';
-import { AdminModule } from './admin/admin.module';
-import { DogsComponent } from './admin/dogs/dogs.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'dogs', component: DogsComponent }
+  {
+    path: 'login',
+    loadChildren: () => import('./security/security.module').then(m => m.SecurityModule)
+  },
+  {
+    path: 'dogs',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'login' } 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), AdminModule],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
