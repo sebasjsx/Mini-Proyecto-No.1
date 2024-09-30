@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Dialog Information</h1>
+<div mat-dialog-content>
+  <h4><strong>User Created:</strong> {{ data.UserCreated }}</h4>
+  <h4><strong>Date Created:</strong> {{ data.DateCreated | date:'short' }}</h4>
+  <h4><strong>User Updated:</strong> {{ data.UserUpdated }}</h4>
+  <h4><strong>Date Updated:</strong> {{ data.DateUpdated | date:'short' }}</h4>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</div>

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './security/login/login.component';
 
 const routes: Routes = [
   {
@@ -8,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./security/security.module').then(m => m.SecurityModule)
   },
   {
-    path: 'dogs',
+    path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
